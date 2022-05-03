@@ -10,5 +10,7 @@ create table Unicorn
    heightUnit varchar(2) not null,
    weight integer not null,
    weightUnit Varchar(2) not null,
-   primary key(unicornId)
+   identifiableMarks Varchar(23767),
+   primary key(unicornId),
+   CONSTRAINT ensure_json CHECK (identifiableMarks IS JSON)
 );
